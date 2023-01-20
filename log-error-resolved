@@ -1,0 +1,46 @@
+Log: Error when you push
+
+> git push origin infra-2001
+To git.in.xxx.com:rgc/xxx.git
+ ! [rejected]        infra-2001 -> infra-2001 (non-fast-forward)
+error: failed to push some refs to 'git.in.xxx.com:rgc/xxx.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+How to resolve it?!
+
+
+❯ git pull origin infra-2001 #branch that u wanna work
+From git.in.xxx.com:
+ * branch            infra-2001 -> FETCH_HEAD
+warning: skipped previously applied commit d8185c7
+warning: skipped previously applied commit 6d87872
+warning: skipped previously applied commit 5af010f
+warning: skipped previously applied commit 3cb1a72
+warning: skipped previously applied commit f608a93
+warning: skipped previously applied commit 17d42de
+warning: skipped previously applied commit 7ed673d
+warning: skipped previously applied commit ea056af
+warning: skipped previously applied commit d724bfc
+warning: skipped previously applied commit 926d69c
+warning: skipped previously applied commit 914387e
+warning: skipped previously applied commit cf9a17e
+hint: use --reapply-cherry-picks to include skipped commits
+hint: Disable this message with "git config advice.skippedCherryPicks false"
+Successfully rebased and updated refs/heads/infra-2001.
+
+❯ git status
+On branch infra-2001
+
+❯ git push origin infra-2001 # now you can push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 707 bytes | 707.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: View merge request for infra-2001:
+
